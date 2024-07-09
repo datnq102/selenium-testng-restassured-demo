@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AutomationSuite" parallel="false">
+
+    <!-- QA Environment -->
+    <test name="UITestsStaging">
+        <parameter name="environment" value="Staging" />
+        <parameter name="username" value="username" />
+        <parameter name="password" value="password" />
+        <classes>
+            <class name="tests.ui.LoginTest"/>
+            <class name="tests.ui.CreateChallengeTest"/>
+        </classes>
+    </test>
+
+    <test name="APITestsStaging">
+        <parameter name="baseURI" value="https://reqres.in/api"/>
+        <classes>
+            <class name="tests.api.ApiTests"/>
+        </classes>
+    </test>
+
+</suite>
